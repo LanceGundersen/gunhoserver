@@ -26,12 +26,6 @@ sudo usermod -aG docker $USER
 echo "user puid="$(sudo id -u $USER)
 echo "docker guid="$(sudo cut -d: -f3 < <(getent group docker))
 
-echo "Adding to env file at /etc/environment..."
-echo "PUID=$(sudo id -u $USER)" | sudo tee -a /etc/environment
-echo "PGID=$(sudo cut -d: -f3 < <(getent group docker))" | sudo tee -a /etc/environment
-echo "TZ=\"America/New_York\"" | sudo tee -a /etc/environment
-echo "USERDIR=\"$(echo ~duotronics)\"" | sudo tee -a /etc/environment
-
 echo "Log out and log back in so that your group membership is re-evaluated."
 select yn in "Yes" "No"; do
     case $yn in
