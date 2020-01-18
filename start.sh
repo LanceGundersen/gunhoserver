@@ -16,6 +16,15 @@ select yn in "Yes" "No"; do
     esac
 done
 
+echo "Enable Canonicla Live Patch Service?"
+echo "Read more here: https://auth.livepatch.canonical.com/"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) sudo chmod -x livepatch.sh; . livepatch.sh; break;;
+        No ) break;;
+    esac
+done
+
 echo "Install Portainer?"
 select yn in "Yes" "No"; do
     case $yn in
