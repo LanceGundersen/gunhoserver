@@ -32,3 +32,5 @@ select yn in "Yes" "No"; do
         No ) break;;
     esac
 done
+
+echo "All done!"
