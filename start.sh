@@ -8,6 +8,8 @@ echo "After a fresh install you must log out and back in again!"
 echo "====="
 echo "====="
 
+sudo chmod -x portainer.sh
+
 echo "Fresh Install?"
 select yn in "Yes" "No"; do
     case $yn in
@@ -19,7 +21,7 @@ done
 echo "Install Portainer?"
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) sh portainer.sh; break;;
-        No ) sh break;;
+        Yes ) sudo chmod -x portainer.sh; sh portainer.sh; break;;
+        No ) exit;;
     esac
 done
