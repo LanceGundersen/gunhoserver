@@ -36,6 +36,6 @@ echo "Log out and log back in so that your group membership is re-evaluated."
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) logout; break;;
-        No ) exit;;
+        No ) break;;
     esac
 done
